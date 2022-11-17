@@ -12,6 +12,7 @@ endif()
 
 option(cooperative_perception_ENABLE_TESTING "Enable unit tests for cooperative_perception" ${PROJECT_IS_TOP_LEVEL})
 option(cooperative_perception_EXPORT_COMPILE_COMMANDS "Export compile commands" ON)
+option(cooperative_perception_BUILD_DOCS "Build documentation for cooperative_perception" ON)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ${cooperative_perception_EXPORT_COMPILE_COMMANDS})
 
@@ -27,4 +28,8 @@ add_subdirectory(src)
 
 if(cooperative_perception_ENABLE_TESTING OR PROJECT_IS_TOP_LEVEL)
   add_subdirectory(test)
+endif()
+
+if(cooperative_perception_BUILD_DOCS)
+  add_subdirectory(docs)
 endif()
