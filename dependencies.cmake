@@ -1,4 +1,3 @@
-find_package(Eigen3 REQUIRED)
 find_package(units REQUIRED)
 
 if(cooperative_perception_BUILD_DOCS)

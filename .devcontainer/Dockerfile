@@ -5,7 +5,9 @@ RUN apt update \
         clang-format \
         clang-tidy \
         cmake \
+        doxygen \
         g++ \
         gcc \
         gdb \
+        python3-pip \
     && rm -rf /var/lib/apt/lists/*
