@@ -12,6 +12,7 @@
             ]
         }
     },
+    "postCreateCommand": "python3 -m pip install --quiet -r docs/requirements.txt",
     "remoteUser": "root",
     "containerUser": "root",
     // Uncomment for hosts that do not use SELinux (e.g., Debian and Ubuntu)
