@@ -2,6 +2,7 @@
 #define COOPERATIVE_PERCEPTION_CTRV_MODEL_HPP
 
 #include <units.h>
+#include "cooperative_perception/units.hpp"
 
 namespace cooperative_perception
 {
@@ -22,6 +23,10 @@ struct CtrvState
  * @return CTRV state at end of time step
  */
 auto nextState(const CtrvState& state, units::time::second_t time_step) -> CtrvState;
+
+auto nextState(const CtrvState& state, units::time::second_t time_step,
+               units::acceleration::meters_per_second_squared_t linear_accel_noise,
+               units::angular_acceleration::radian_per_second_squared_t angular_accel_noise) -> CtrvState;
 
 }  // namespace cooperative_perception
 

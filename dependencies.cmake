@@ -1,3 +1,4 @@
+find_package(Boost REQUIRED COMPONENTS container)
 find_package(units REQUIRED)
 
 if(cooperative_perception_BUILD_DOCS)
