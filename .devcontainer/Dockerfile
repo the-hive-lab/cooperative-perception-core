@@ -10,6 +10,7 @@ RUN apt update \
         gcc \
         gdb \
         libgtest-dev \
+        libboost-container-dev \
         make \
         python3-pip \
     && rm -rf /var/lib/apt/lists/*
