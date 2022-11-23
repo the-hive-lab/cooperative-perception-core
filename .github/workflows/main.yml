@@ -1,0 +1,29 @@
+---
+name: CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v2
+
+      - name: Build and run devcontainer task
+        uses: devcontainers/ci@v0.2
+        with:
+          imageName: ghcr.io/the-hive-lab/cooperative-perception-core-devcontainer
+          push: never
+          runCmd: |
+            cmake -B build
+            cmake --build build --target cooperative_perception_coreDocumentation
+
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/spike/doxygen' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/docs/sphinx
+
+...
